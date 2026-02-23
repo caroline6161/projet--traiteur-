@@ -21,9 +21,7 @@ function loadController($controllerName) {
 
 switch ($page) {
 
-    /* =========================
-       PAGES VITRINE
-    ========================= */
+
     case 'home':
         loadController("HomeController");
         (new HomeController())->index();
@@ -39,9 +37,7 @@ switch ($page) {
         (new MenuDetailController())->show();
         break;
 
-    /* =========================
-       AUTHENTIFICATION
-    ========================= */
+   
     case 'login':
         loadController("AuthController");
         (new AuthController())->showLoginForm();
@@ -87,9 +83,7 @@ switch ($page) {
         (new AuthController())->resetPassword();
         break;
 
-    /* =========================
-       PROFIL UTILISATEUR
-    ========================= */
+  
     case 'profil':
         loadController("UserController");
         (new UserController())->showProfil();
@@ -100,9 +94,6 @@ switch ($page) {
         (new UserController())->updateProfil();
         break;
 
-    /* =========================
-       COMMANDES CLIENT
-    ========================= */
     case 'mes-commandes':
         loadController("CommandeController");
         (new CommandeController())->mesCommandes();
@@ -123,9 +114,7 @@ switch ($page) {
         (new CommandeController())->modifierCommandeSubmit();
         break;
 
-    /* =========================
-       COMMANDES ADMIN
-    ========================= */
+  
     case 'admin-commandes':
         loadController("AdminCommandeController");
         (new AdminCommandeController())->index();
@@ -141,9 +130,7 @@ switch ($page) {
         (new AdminCommandeController())->updateStatus();
         break;
 
-    /* =========================
-       ADMIN — EMPLOYÉS
-    ========================= */
+   
     case 'admin-employes':
         loadController("AdminController");
         (new AdminController())->listeEmployes();
@@ -164,17 +151,12 @@ switch ($page) {
         (new AdminController())->disableEmploye();
         break;
 
-    /* =========================
-       ADMIN — STATISTIQUES
-    ========================= */
     case 'admin-stats':
         loadController("AdminController");
         (new AdminController())->stats();
         break;
 
-    /* =========================
-       ADMIN DASHBOARD (VUES SIMPLES)
-    ========================= */
+ 
     case 'admin-dashboard':
         include 'src/views/admin-dashboard.php';
         break;
@@ -187,9 +169,6 @@ switch ($page) {
         include 'src/views/admin/admin-plats.php';
         break;
 
-    /* =========================
-       PANIER
-    ========================= */
     case 'cart':
         include 'src/views/cart.php';
         break;
@@ -210,9 +189,7 @@ switch ($page) {
         include 'src/controllers/ConfirmOrderController.php';
         break;
 
-    /* =========================
-       CRUD MENUS
-    ========================= */
+  
     case 'menus':
         loadController("MenuController");
         (new MenuController())->index();
@@ -253,9 +230,7 @@ switch ($page) {
         (new MenuController())->removePlat();
         break;
 
-    /* =========================
-       CRUD PLATS
-    ========================= */
+    
     case 'plats':
         loadController("PlatController");
         (new PlatController())->index();
@@ -296,9 +271,6 @@ switch ($page) {
         (new PlatController())->removeAllergene();
         break;
 
-    /* =========================
-       CRUD ALLERGENES
-    ========================= */
     case 'allergenes':
         loadController("AllergeneController");
         (new AllergeneController())->index();
@@ -329,9 +301,7 @@ switch ($page) {
         (new AllergeneController())->delete();
         break;
 
-    /* =========================
-       CRUD THEMES
-    ========================= */
+   
     case 'themes':
         loadController("ThemeController");
         (new ThemeController())->index();
@@ -362,9 +332,7 @@ switch ($page) {
         (new ThemeController())->delete();
         break;
 
-    /* =========================
-       CRUD REGIMES
-    ========================= */
+   
     case 'regimes':
         loadController("RegimeController");
         (new RegimeController())->index();
@@ -395,9 +363,7 @@ switch ($page) {
         (new RegimeController())->delete();
         break;
 
-    /* =========================
-       404
-    ========================= */
+
     default:
         echo "<h1>404 - Page introuvable</h1>";
         break;
